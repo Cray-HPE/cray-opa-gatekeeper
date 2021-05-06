@@ -1,5 +1,5 @@
 nameOverride: ""
-imagesHost: "sms.local:5000"
+imagesHost: "registry.local"
 
 chart:
   name: "" # set at deploy time automatically, no need to ever set explicitly
