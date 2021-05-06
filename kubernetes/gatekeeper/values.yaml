@@ -31,6 +31,9 @@ resources:
     cpu: 100m
     memory: 256Mi
 
+webhook:
+  failurePolicy: Ignore
+
 kubectl:
   image:
     repository: dtr.dev.cray.com/loftsman/loftsman

@@ -17,7 +17,7 @@ webhooks:
       name: gatekeeper-webhook-service
       namespace: gatekeeper-system
       path: /v1/admit
-  failurePolicy: Ignore
+  failurePolicy: {{ .Values.webhook.failurePolicy }}
   name: validation.gatekeeper.sh
   namespaceSelector:
     matchExpressions:
@@ -41,7 +41,7 @@ webhooks:
       name: gatekeeper-webhook-service
       namespace: gatekeeper-system
       path: /v1/admitlabel
-  failurePolicy: Fail
+  failurePolicy: {{ .Values.webhook.failurePolicy }}
   name: check-ignore-label.gatekeeper.sh
   rules:
   - apiGroups:
