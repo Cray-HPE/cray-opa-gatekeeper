@@ -1,6 +1,6 @@
 {{- /*
 (C) Copyright 2020 Hewlett Packard Enterprise Development LP.
-*/}} 
+*/}}
 
 apiVersion: apps/v1
 kind: Deployment
@@ -18,7 +18,7 @@ spec:
       serviceAccountName: gatekeeper-policy-manager
       containers:
       - name: {{ include "gatekeeper-policy-manager.name" . }}
-        image: '{{ include "gatekeeper-policy-manager.image-prefix" . }}{{ .Values.image.repository }}:{{ .Values.image.tag }}'
+        image: '{{ .Values.image.repository }}:{{ .Values.image.tag }}'
         imagePullPolicy: IfNotPresent
         resources:
           requests:

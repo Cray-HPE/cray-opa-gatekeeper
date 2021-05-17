@@ -49,14 +49,3 @@ Selector labels
 app.kubernetes.io/name: {{ include "gatekeeper-policy-manager.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
-{{/*
-Get an image prefix
-*/}}
-{{- define "gatekeeper-policy-manager.image-prefix" -}}
-{{- if .Values.imagesHost -}}
-{{- printf "%s/" .Values.imagesHost -}}
-{{- else -}}
-{{- printf "" -}}
-{{- end -}}
-{{- end -}}
-
