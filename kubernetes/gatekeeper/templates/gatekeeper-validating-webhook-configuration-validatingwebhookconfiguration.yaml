@@ -15,7 +15,6 @@ webhooks:
     caBundle: Cg==
     service:
       name: gatekeeper-webhook-service
-      namespace: gatekeeper-system
       path: /v1/admit
   failurePolicy: {{ .Values.webhook.failurePolicy }}
   name: validation.gatekeeper.sh
@@ -39,7 +38,7 @@ webhooks:
     caBundle: Cg==
     service:
       name: gatekeeper-webhook-service
-      namespace: gatekeeper-system
+      namespace: {{ .Release.Namespace }}
       path: /v1/admitlabel
   failurePolicy: {{ .Values.webhook.failurePolicy }}
   name: check-ignore-label.gatekeeper.sh
