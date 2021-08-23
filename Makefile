@@ -30,6 +30,10 @@ CHART_VERSION_2 ?= local
 CHART_VERSION_3 ?= local
 CHART_VERSION_4 ?= local
 
+OPA_IMAGE ?= openpolicyagent/opa:0.31.0
+
+
+all: charts rego_test
 charts: chart1 chart2 chart3 chart4
 
 chart1:
@@ -47,3 +51,6 @@ chart3:
 chart4:
 	helm dep up ${CHART_PATH}/${CHART_NAME_4}
 	helm package ${CHART_PATH}/${CHART_NAME_4} -d ${CHART_PATH}/.packaged --version ${CHART_VERSION_4}
+
+rego_test:
+	docker run -v ${PWD}/${CHART_PATH}/gatekeeper-policy-library/regos:/test ${OPA_IMAGE} test -v /test
