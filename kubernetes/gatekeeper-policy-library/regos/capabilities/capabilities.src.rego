@@ -2,12 +2,14 @@ package capabilities
 
 violation[{"msg": msg}] {
   container := input.review.object.spec.containers[_]
+  container.image != "gcr.io/vshasta-cray/istio/proxyv2:1.6.13-cray1-20210202183713_549528c5da"
   has_disallowed_capabilities(container)
   msg := sprintf("container <%v> has a disallowed capability. Allowed capabilities are %v", [container.name, get_default(input.parameters, "allowedCapabilities", "NONE")])
 }
 
 violation[{"msg": msg}] {
   container := input.review.object.spec.containers[_]
+  container.image != "gcr.io/vshasta-cray/istio/proxyv2:1.6.13-cray1-20210202183713_549528c5da"
   missing_drop_capabilities(container)
   msg := sprintf("container <%v> is not dropping all required capabilities. Container must drop all of %v", [container.name, input.parameters.requiredDropCapabilities])
 }
@@ -16,12 +18,14 @@ violation[{"msg": msg}] {
 
 violation[{"msg": msg}] {
   container := input.review.object.spec.initContainers[_]
+  container.image != "gcr.io/vshasta-cray/istio/proxyv2:1.6.13-cray1-20210202183713_549528c5da"
   has_disallowed_capabilities(container)
   msg := sprintf("init container <%v> has a disallowed capability. Allowed capabilities are %v", [container.name, get_default(input.parameters, "allowedCapabilities", "NONE")])
 }
 
 violation[{"msg": msg}] {
   container := input.review.object.spec.initContainers[_]
+  container.image != "gcr.io/vshasta-cray/istio/proxyv2:1.6.13-cray1-20210202183713_549528c5da"
   missing_drop_capabilities(container)
   msg := sprintf("init container <%v> is not dropping all required capabilities. Container must drop all of %v", [container.name, input.parameters.requiredDropCapabilities])
 }

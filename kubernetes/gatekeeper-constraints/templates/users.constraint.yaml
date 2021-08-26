@@ -19,6 +19,8 @@ spec:
     # namespaces:
     #   - "production"  parameters:
   parameters:
+    allowedImages:
+{{ .Values.allowedImages | toYaml | indent 6 }}
     runAsUser:
       rule: {{ index .Values "constraints" "users" "variables" $profile "runAsUser" "rule" }}
       ranges:
