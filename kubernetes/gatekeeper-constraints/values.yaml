@@ -6,9 +6,7 @@
 # CONSTRAINTS TO BE APPLIED
 
 excludedNamespaces:
-  - loftsman
   - kube-system
-  - istio
 constraints:
   allow-privilege-escalation-container:
     profile: restricted
