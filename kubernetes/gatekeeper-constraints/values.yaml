@@ -118,14 +118,14 @@ constraints:
         rule: "MustRunAs"
         ranges:
           - min: 1
-            max: 1000
+            max: 65535
       restricted-transition:
         enforcementAction: deny
         enabled: true
         rule: "MustRunAs"
         ranges:
           - min: 1
-            max: 1000
+            max: 65535
       privileged:
         enforcementAction: deny
         enabled: false
@@ -135,7 +135,7 @@ constraints:
         rule: "MustRunAs"
         ranges:
           - min: 1
-            max: 1000
+            max: 65535
   host-filesystem:
     profile: restricted
     variables:
@@ -295,13 +295,13 @@ constraints:
         runAsUser:
           rule: MustRunAsNonRoot
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         runAsGroup:
           rule: RunAsAny
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         supplementalGroups:
           rule: MustRunAs #
           ranges:
@@ -318,13 +318,13 @@ constraints:
         runAsUser:
           rule: RunAsAny
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         runAsGroup:
           rule: RunAsAny
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         supplementalGroups:
           rule: MustRunAs #
           ranges:
@@ -341,13 +341,13 @@ constraints:
         runAsUser:
           rule: RunAsAny
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         runAsGroup:
           rule: RunAsAny
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         supplementalGroups:
           rule: RunAsAny
           ranges:
@@ -364,13 +364,13 @@ constraints:
         runAsUser:
           rule: MustRunAsNonRoot
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         runAsGroup:
           rule: RunAsAny
           ranges:
-            - min: 100
-              max: 200
+            - min: 1
+              max: 65535
         supplementalGroups:
           rule: MustRunAs #
           ranges:
