@@ -25,6 +25,12 @@ pipeline {
     }
 
     stages {
+        stage("Test") {
+            steps {
+                sh "make rego_test"
+            }
+        }
+
         stage("Build") {
             parallel {
                 stage("Charts") {
