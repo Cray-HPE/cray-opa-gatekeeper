@@ -7,6 +7,8 @@
 
 excludedNamespaces:
   - kube-system
+allowedImages:
+  - gcr.io/vshasta-cray/istio/proxyv2:1.6.13-cray1-20210202183713_549528c5da
 constraints:
   allow-privilege-escalation-container:
     profile: restricted
