@@ -14,7 +14,7 @@ logLevel: INFO
 emitAdmissionEvents: false
 emitAuditEvents: false
 image:
-  repository: docker.io/openpolicyagent/gatekeeper
+  repository: artifactory.algol60.net/csm-docker/stable/docker.io/openpolicyagent/gatekeeper
   release: v3.1.1
   pullPolicy: IfNotPresent
 nodeSelector: { kubernetes.io/os: linux }
@@ -35,5 +35,5 @@ webhook:
 
 kubectl:
   image:
-    repository: dtr.dev.cray.com/loftsman/loftsman
-    tag: 0.5.1
+    repository: artifactory.algol60.net/csm-docker/stable/docker-kubectl
+    tag: 1.19.9

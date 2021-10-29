@@ -1,6 +1,24 @@
 apiVersion: v2
-appVersion: 1.16.0
-description: A Helm chart for Kubernetes
 name: gatekeeper-policy-library
-type: application
 version: 0.4.0
+description: A Helm chart for Kubernetes
+type: application
+keywords:
+  - gatekeeper-policy-library
+home: https://github.com/Cray-HPE/cray-opa-gatekeeper
+appVersion: 1.16.0
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: Updated images to CSM patched versions
+      links:
+        - name: Github Issue
+          url: https://github.com/Cray-HPE/cray-opa-gatekeeper/issues/9
+        - name: Github PR
+          url: https://github.com/Cray-HPE/cray-opa-gatekeeper/pull/8
+  artifacthub.io/images: |
+    - name: kubectl
+      image: artifactory.algol60.net/csm-docker/stable/docker-kubectl:1.19.9
+    - name: opa
+      image: artifactory.algol60.net/csm-docker/stable/docker.io/openpolicyagent/opa
+  artifacthub.io/license: MIT
