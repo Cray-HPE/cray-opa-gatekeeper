@@ -1,7 +1,7 @@
-#enable/disable helm testing
+# Enable/Disable helm testing
 runTests: true
 
-# mount path for regos
+# Mount path for regos
 mountpath: /rego/tests/
 
 crd:

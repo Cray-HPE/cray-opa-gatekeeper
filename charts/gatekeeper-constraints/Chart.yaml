@@ -2,10 +2,11 @@ apiVersion: v2
 name: gatekeeper-constraints
 version: 0.5.0
 description: A Helm chart for Kubernetes
-appVersion: 1.16.0
 keywords:
   - gatekeeper-constraints
 home: https://github.com/Cray-HPE/cray-opa-gatekeeper
+maintainers:
+  - name: kburns-hpe
 appVersion: 1.16.0
 annotations:
   artifacthub.io/changes: |

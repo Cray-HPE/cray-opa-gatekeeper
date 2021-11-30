@@ -5,6 +5,8 @@ description: A Helm chart for Kubernetes
 keywords:
   - gatekeeper-policy-library
 home: https://github.com/Cray-HPE/cray-opa-gatekeeper
+maintainers:
+  - name: kburns-hpe
 appVersion: 1.16.0
 annotations:
   artifacthub.io/changes: |

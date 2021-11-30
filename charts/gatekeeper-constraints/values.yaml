@@ -144,26 +144,26 @@ constraints:
         enabled: true
         allowedHostPaths:
         - pathPrefix: "/lustre"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
       restricted-transition:
         enforcementAction: deny
         enabled: true
         allowedHostPaths:
         - pathPrefix: "/lustre"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
         - pathPrefix: "/root/registry"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
         - pathPrefix: "/lib/modules"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
         # "/" is needed by cray-nmd and cray-cps-cm-pm.  cray-nmd is temporary
         - pathPrefix: "/"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
         - pathPrefix: "/var/lib/nfsroot/nmd"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
         - pathPrefix: "/lus"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
         - pathPrefix: "/var/tmp/cps-local"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
       privileged:
         enforcementAction: deny
         enabled: false
@@ -172,7 +172,7 @@ constraints:
         enabled: true
         allowedHostPaths:
         - pathPrefix: "/lustre"
-          readOnly: false # only allow read-only mounts
+          readOnly: false  # only allow read-only mounts
   host-namespaces:
     profile: restricted
     variables:
@@ -224,19 +224,19 @@ constraints:
       restricted:
         enforcementAction: deny
         enabled: false
-        procMount: "Default" #Unmasked
+        procMount: "Default"  # Unmasked
       restricted-transition:
         enforcementAction: deny
         enabled: false
-        procMount: "Default" #Unmasked
+        procMount: "Default"  # Unmasked
       privileged:
         enforcementAction: deny
         enabled: false
-        procMount: "Default" #Unmasked
+        procMount: "Default"  # Unmasked
       dryrun:
         enforcementAction: deny
         enabled: false
-        procMount: "Default" #Unmasked
+        procMount: "Default"  # Unmasked
   read-only-root-filesystem:
     profile: restricted
     variables:
@@ -303,7 +303,7 @@ constraints:
             - min: 1
               max: 65535
         supplementalGroups:
-          rule: MustRunAs #
+          rule: MustRunAs
           ranges:
             - min: 1
               max: 65535
@@ -326,7 +326,7 @@ constraints:
             - min: 1
               max: 65535
         supplementalGroups:
-          rule: MustRunAs #
+          rule: MustRunAs
           ranges:
             - min: 1
               max: 65535
@@ -372,7 +372,7 @@ constraints:
             - min: 1
               max: 65535
         supplementalGroups:
-          rule: MustRunAs #
+          rule: MustRunAs
           ranges:
             - min: 1
               max: 65535
