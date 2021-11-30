@@ -11,40 +11,30 @@ pipeline {
     }
 
     environment {
-        NAME = "base-charts"
-        DESCRIPTION = "Base subcharts used by other charts."
+        NAME = "cray-etcd"
+        DESCRIPTION = "Deploys the etcd operator and other utilities to the Cray system."
         IS_STABLE = getBuildIsStable()
-        CHART_NAME_1 = "gatekeeper"
-        CHART_NAME_2 = "gatekeeper-constraints"
-        CHART_NAME_3 = "gatekeeper-policy-library"
-        CHART_NAME_4 = "gatekeeper-policy-manager"
-        CHART_VERSION_1 = getChartVersion(name: env.CHART_NAME_1, isStable: env.IS_STABLE)
-        CHART_VERSION_2 = getChartVersion(name: env.CHART_NAME_2, isStable: env.IS_STABLE)
-        CHART_VERSION_3 = getChartVersion(name: env.CHART_NAME_3, isStable: env.IS_STABLE)
-        CHART_VERSION_4 = getChartVersion(name: env.CHART_NAME_4, isStable: env.IS_STABLE)
     }
 
     stages {
-        stage("Test") {
-            steps {
-                sh "make rego_test"
-            }
-        }
-
         stage("Build") {
-            parallel {
-                stage("Charts") {
-                    steps {
-                        sh "make charts"
-                    }
-                }
+            environment {
+                CHART_VERSIONS = [
+                    getChartVersion(name: "gatekeeper",                chartDirectory: "charts", isStable: env.IS_STABLE),
+                    getChartVersion(name: "gatekeeper-constraints",    chartDirectory: "charts", isStable: env.IS_STABLE),
+                    getChartVersion(name: "gatekeeper-policy-library", chartDirectory: "charts", isStable: env.IS_STABLE),
+                    getChartVersion(name: "gatekeeper-policy-manager", chartDirectory: "charts", isStable: env.IS_STABLE)
+                ].join(" ")
+            }
+            steps {
+                sh "make"
             }
         }
 
         stage("Publish") {
             steps {
                 script {
-                    publishCsmHelmCharts(component: env.NAME, chartsPath: "${WORKSPACE}/kubernetes/.packaged", isStable: env.IS_STABLE)
+                    publishCsmHelmCharts(component: env.NAME, chartsPath: "${WORKSPACE}/packages", isStable: env.IS_STABLE)
                 }
             }
         }

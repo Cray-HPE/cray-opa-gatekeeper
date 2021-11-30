@@ -11,4 +11,11 @@ crd:
 kubectl:
   image:
     repository: artifactory.algol60.net/csm-docker/stable/docker-kubectl
-    tag: 1.19.9
+    tag: 1.19.15
+    pullPolicy: IfNotPresent
+
+opa:
+  image:
+    repository: artifactory.algol60.net/csm-docker/stable/docker.io/openpolicyagent/opa
+    tag: 0.24.0-envoy-1
+    pullPolicy: IfNotPresent
