@@ -11,8 +11,8 @@ pipeline {
     }
 
     environment {
-        NAME = "cray-etcd"
-        DESCRIPTION = "Deploys the etcd operator and other utilities to the Cray system."
+        NAME = "cray-opa-gatekeeper"
+        DESCRIPTION = "OPA Gatekeeper charts"
         IS_STABLE = getBuildIsStable()
     }
 
