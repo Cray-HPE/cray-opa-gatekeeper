@@ -45,7 +45,7 @@ ifdef CHART_VERSIONS
 	CMD="package charts/gatekeeper                --version $(word 1, $(CHART_VERSIONS)) -d packages" $(MAKE) helm
 	CMD="package charts/gatekeeper-constraints    --version $(word 2, $(CHART_VERSIONS)) -d packages" $(MAKE) helm
 	CMD="package charts/gatekeeper-policy-library --version $(word 3, $(CHART_VERSIONS)) -d packages" $(MAKE) helm
-	CMD="package charts/gatekeeper-policy-manager --version $(word 3, $(CHART_VERSIONS)) -d packages" $(MAKE) helm
+	CMD="package charts/gatekeeper-policy-manager --version $(word 4, $(CHART_VERSIONS)) -d packages" $(MAKE) helm
 else
 	CMD="package charts/* -d packages" $(MAKE) helm
 endif
