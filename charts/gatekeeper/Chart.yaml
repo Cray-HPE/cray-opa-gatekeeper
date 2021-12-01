@@ -1,0 +1,27 @@
+apiVersion: v2
+name: gatekeeper
+version: 1.5.0
+description: A Helm chart for Gatekeeper
+keywords:
+  - open policy agent
+home: https://github.com/open-policy-agent/gatekeeper
+sources:
+  - https://github.com/open-policy-agent/gatekeeper.git
+maintainers:
+  - name: kburns-hpe
+appVersion: v3.1.1
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: Updated images to CSM patched versions
+      links:
+        - name: Github Issue
+          url: https://github.com/Cray-HPE/cray-opa-gatekeeper/issues/9
+        - name: Github PR
+          url: https://github.com/Cray-HPE/cray-opa-gatekeeper/pull/8
+  artifacthub.io/images: |
+    - name: gatekeeper-policy-manager
+      image: artifactory.algol60.net/csm-docker/stable/docker.io/openpolicyagent/gatekeeper:v3.1.1
+    - name: kubectl
+      image: artifactory.algol60.net/csm-docker/stable/docker-kubectl:1.19.15
+  artifacthub.io/license: MIT

@@ -15,8 +15,8 @@ metadata:
 spec:
   containers:
   - name: "{{ .Release.Name }}-opa-rego-test"
-    image: docker.io/openpolicyagent/opa
-    imagePullPolicy: IfNotPresent
+    image: {{ .Values.opa.image.repository }}:{{ .Values.opa.image.tag }}
+    imagePullPolicy: {{ .Values.opa.image.pullPolicy }}
     command: ["/opa"]
     args: ["test", "-v", '{{ include "gatekeeper-policy-library.regos" . }}']
     volumeMounts:

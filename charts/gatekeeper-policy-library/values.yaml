@@ -1,0 +1,21 @@
+# Enable/Disable helm testing
+runTests: true
+
+# Mount path for regos
+mountpath: /rego/tests/
+
+crd:
+  # The number of CRDs that will be created. This is used in the wait-for job
+  count: 16
+
+kubectl:
+  image:
+    repository: artifactory.algol60.net/csm-docker/stable/docker-kubectl
+    tag: 1.19.15
+    pullPolicy: IfNotPresent
+
+opa:
+  image:
+    repository: artifactory.algol60.net/csm-docker/stable/docker.io/openpolicyagent/opa
+    tag: 0.24.0-envoy-1
+    pullPolicy: IfNotPresent
