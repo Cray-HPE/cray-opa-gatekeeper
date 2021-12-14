@@ -30,8 +30,8 @@ resources:
 webhook:
   failurePolicy: Ignore
 
-kubectl:
+curl:
   image:
-    repository: artifactory.algol60.net/csm-docker/stable/docker-kubectl
-    tag: 1.19.15
+    repository: curlimages/curl
+    tag: 7.80.0
     pullPolicy: IfNotPresent
