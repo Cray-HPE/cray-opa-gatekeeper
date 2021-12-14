@@ -1,6 +1,6 @@
 apiVersion: v2
 name: gatekeeper
-version: 1.5.0
+version: 1.5.1
 description: A Helm chart for Gatekeeper
 keywords:
   - open policy agent
@@ -22,6 +22,6 @@ annotations:
   artifacthub.io/images: |
     - name: gatekeeper-policy-manager
       image: artifactory.algol60.net/csm-docker/stable/docker.io/openpolicyagent/gatekeeper:v3.1.1
-    - name: kubectl
-      image: artifactory.algol60.net/csm-docker/stable/docker-kubectl:1.19.15
+    - name: curl
+      image: curlimages/curl:7.80.0
   artifacthub.io/license: MIT
