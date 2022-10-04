@@ -88,7 +88,7 @@ spec:
             path: /readyz
             port: 9090
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+{{ toYaml .Values.controller.resources | indent 10 }}
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
