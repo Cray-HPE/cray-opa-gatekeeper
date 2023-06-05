@@ -1,7 +1,9 @@
 # Copyright 2021 Hewlett Packard Enterprise Development LP
 
 global:
-  authGateway: services/services-gateway
+  authGateways:
+  - services/services-gateway
+  - services/customer-admin-gateway
 
 image:
   repository: artifactory.algol60.net/csm-docker/stable/quay.io/sighup/gatekeeper-policy-manager
