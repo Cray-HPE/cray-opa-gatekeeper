@@ -11,8 +11,10 @@ metadata:
   labels:
     app: gatekeeper-policy-manager
 spec:
+  {{- with .Values.global.authGateways }}
   gateways:
-  - {{ .Values.global.authGateway }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   hosts:
   - {{ (index .Values "gatekeeper-policy-manager" "externalAuthority") }}
   http:
